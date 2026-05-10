@@ -1,0 +1,23 @@
+@media(max-width:768px){
+
+  section{
+    padding:80px 7%;
+  }
+
+  .main-title{
+    font-size:3rem;
+  }
+
+  .section-title{
+    font-size:2rem;
+  }
+
+  .bubble-title{
+    font-size:2rem;
+  }
+
+  .detox-title{
+    font-size:2rem;
+  }
+
+}

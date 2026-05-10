@@ -1,0 +1,335 @@
+*{
+  margin:0;
+  padding:0;
+  box-sizing:border-box;
+}
+
+html{
+  scroll-behavior:smooth;
+}
+
+body{
+
+  background:#0f0f1a;
+
+  color:white;
+
+  font-family:
+  'Pretendard',
+  sans-serif;
+
+  overflow-x:hidden;
+
+}
+
+/* 공통 섹션 */
+
+section{
+
+  min-height:100vh;
+
+  padding:100px 10%;
+
+  position:relative;
+
+}
+
+/* INTRO */
+
+.intro{
+
+  display:flex;
+
+  flex-direction:column;
+
+  justify-content:center;
+
+  align-items:center;
+
+  text-align:center;
+
+}
+
+.background-glow{
+
+  width:500px;
+
+  height:500px;
+
+  background:#8b5cf6;
+
+  position:absolute;
+
+  border-radius:50%;
+
+  filter:blur(160px);
+
+  opacity:0.2;
+
+  z-index:-1;
+
+}
+
+.main-title{
+
+  font-size:5rem;
+
+  font-weight:900;
+
+  line-height:1.2;
+
+  background:linear-gradient(
+    90deg,
+    #8b5cf6,
+    #ec4899,
+    #3b82f6
+  );
+
+  -webkit-background-clip:text;
+
+  -webkit-text-fill-color:transparent;
+
+}
+
+.intro-text{
+
+  margin-top:30px;
+
+  font-size:1.4rem;
+
+  line-height:1.8;
+
+  opacity:0.8;
+
+}
+
+.scroll-down{
+
+  margin-top:60px;
+
+  font-size:0.9rem;
+
+  letter-spacing:5px;
+
+  opacity:0.5;
+
+  animation:float 2s infinite;
+
+}
+
+/* 공통 제목 */
+
+.section-title{
+
+  text-align:center;
+
+  font-size:2.8rem;
+
+  margin-bottom:60px;
+
+}
+
+/* 알고리즘 섹션 */
+
+.algorithm-section{
+
+  display:flex;
+
+  flex-direction:column;
+
+  gap:20px;
+
+  justify-content:center;
+
+}
+
+.system-title{
+
+  font-size:2rem;
+
+  color:#8b5cf6;
+
+  margin-bottom:20px;
+
+}
+
+.system-box{
+
+  background:#1b1b2e;
+
+  padding:25px;
+
+  border-radius:20px;
+
+  border:1px solid rgba(255,255,255,0.08);
+
+  backdrop-filter:blur(10px);
+
+}
+
+/* 관심도 바 */
+
+.interest-box{
+
+  margin-top:50px;
+
+  display:flex;
+
+  flex-direction:column;
+
+  gap:25px;
+
+}
+
+.interest-item{
+
+  display:flex;
+
+  flex-direction:column;
+
+  gap:10px;
+
+}
+
+.interest-item span{
+
+  font-size:1rem;
+
+}
+
+.bar{
+
+  width:100%;
+
+  height:16px;
+
+  background:#22223a;
+
+  border-radius:20px;
+
+  overflow:hidden;
+
+}
+
+.fill{
+
+  width:0%;
+
+  height:100%;
+
+  border-radius:20px;
+
+  background:linear-gradient(
+    90deg,
+    #8b5cf6,
+    #3b82f6
+  );
+
+  transition:0.5s;
+
+}
+
+/* Bubble */
+
+.bubble-section{
+
+  text-align:center;
+
+}
+
+.bubble-title{
+
+  font-size:3rem;
+
+  margin-bottom:60px;
+
+}
+
+/* Detox */
+
+.detox-section{
+
+  display:flex;
+
+  flex-direction:column;
+
+  justify-content:center;
+
+  align-items:center;
+
+  text-align:center;
+
+}
+
+.detox-title{
+
+  font-size:3rem;
+
+}
+
+.detox-text{
+
+  margin-top:30px;
+
+  font-size:1.2rem;
+
+  line-height:2;
+
+  opacity:0.8;
+
+}
+
+#resetBtn{
+
+  margin-top:40px;
+
+  padding:18px 40px;
+
+  border:none;
+
+  border-radius:20px;
+
+  background:linear-gradient(
+    135deg,
+    #8b5cf6,
+    #3b82f6
+  );
+
+  color:white;
+
+  font-size:1rem;
+
+  cursor:pointer;
+
+  transition:0.3s;
+
+}
+
+#resetBtn:hover{
+
+  transform:
+  translateY(-5px)
+  scale(1.03);
+
+  box-shadow:
+  0 15px 40px rgba(139,92,246,0.4);
+
+}
+
+/* 애니메이션 */
+
+@keyframes float{
+
+  0%{
+    transform:translateY(0);
+  }
+
+  50%{
+    transform:translateY(10px);
+  }
+
+  100%{
+    transform:translateY(0);
+  }
+
+}
