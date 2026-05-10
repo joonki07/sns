@@ -33,32 +33,11 @@
   translateY(-10px)
   scale(1.02);
 
-  box-shadow:
-  0 20px 50px rgba(0,0,0,0.4);
-
 }
 
 .thumbnail{
 
   height:250px;
-
-  position:relative;
-
-}
-
-.thumbnail::after{
-
-  content:'';
-
-  position:absolute;
-
-  inset:0;
-
-  background:linear-gradient(
-    to top,
-    rgba(0,0,0,0.7),
-    transparent
-  );
 
 }
 
@@ -68,35 +47,13 @@
 
 }
 
-.feed-info h3{
-
-  font-size:1.2rem;
-
-  margin-bottom:10px;
-
-}
-
-.feed-info p{
-
-  opacity:0.7;
-
-  margin-bottom:15px;
-
-}
-
 .feed-meta{
 
   display:flex;
 
   justify-content:space-between;
 
-  align-items:center;
-
-}
-
-.likes{
-
-  color:#c4b5fd;
+  margin-top:15px;
 
 }
 
@@ -115,20 +72,5 @@
   border-radius:20px;
 
   font-size:0.8rem;
-
-  backdrop-filter:blur(10px);
-
-}
-
-.bubble-feed{
-
-  display:grid;
-
-  grid-template-columns:
-  repeat(auto-fit,minmax(250px,1fr));
-
-  gap:25px;
-
-  margin-top:50px;
 
 }

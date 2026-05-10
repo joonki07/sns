@@ -1,0 +1,160 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+
+  <meta charset="UTF-8">
+
+  <meta name="viewport"
+  content="width=device-width, initial-scale=1.0">
+
+  <title>
+    관심사 분석 결과
+  </title>
+
+  <link rel="stylesheet"
+  href="css/style.css">
+
+</head>
+
+<body>
+
+  <section class="detox-section">
+
+    <h1 class="main-title">
+
+      당신의 피드 분석 결과
+
+    </h1>
+
+    <div class="analysis-content">
+
+      <div class="result-box">
+
+        <h3>
+          📊 관심사 분석
+        </h3>
+
+        <p id="interestResult">
+
+        </p>
+
+      </div>
+
+      <div class="result-box">
+
+        <h3>
+          ⏱ 체류시간 분석
+        </h3>
+
+        <p id="timeResult">
+
+        </p>
+
+      </div>
+
+      <div class="result-box">
+
+        <h3>
+          ⚙️ 추천 알고리즘 원리
+        </h3>
+
+        <p class="principle-text">
+
+          추천 알고리즘은 사용자의 행동 데이터를
+          기반으로 관심사를 예측합니다.<br><br>
+
+          클릭,
+          체류시간,
+          반복 행동 등을 분석하여
+          비슷한 콘텐츠를 추천합니다.<br><br>
+
+          즉,
+          사용자의 행동이
+          다시 새로운 추천을 만드는 구조입니다.
+
+        </p>
+
+      </div>
+
+      <div class="result-box">
+
+        <h3>
+          💭 추천 알고리즘의 영향
+        </h3>
+
+        <p class="principle-text">
+
+          추천 시스템은 편리함을 제공하지만,
+          특정 콘텐츠만 반복 노출할 수도 있습니다.<br><br>
+
+          그 결과,
+          사용자는 다양한 정보보다
+          익숙한 콘텐츠만 계속 소비하게 될 수 있습니다.
+
+        </p>
+
+      </div>
+
+      <div class="final-message">
+
+        당신의 선택은<br>
+        다시 당신의 세상을 만듭니다.
+
+      </div>
+
+    </div>
+
+  </section>
+
+  <script>
+
+    const interest = JSON.parse(
+      localStorage.getItem(
+        'interestData'
+      )
+    );
+
+    const stayTime =
+    localStorage.getItem(
+      'stayTime'
+    );
+
+    const sorted =
+    Object.entries(interest)
+
+    .sort((a,b)=>b[1]-a[1]);
+
+    const top =
+    sorted[0];
+
+    document.getElementById(
+      'interestResult'
+    ).innerHTML = `
+
+      가장 많이 반응한 콘텐츠는
+      <strong>${top[0]}</strong>
+      입니다.<br><br>
+
+      선택 횟수 :
+      ${top[1]}회
+
+    `;
+
+    document.getElementById(
+      'timeResult'
+    ).innerHTML = `
+
+      약
+      <strong>${stayTime}초</strong>
+      동안 콘텐츠를 탐색했습니다.<br><br>
+
+      SNS 알고리즘은
+      체류시간 또한 중요한 관심 데이터로 활용합니다.
+
+    `;
+
+  </script>
+
+</body>
+</html>

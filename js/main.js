@@ -6,6 +6,10 @@ window.addEventListener(
 
 });
 
+// 체류시간 시작
+
+const startTime = Date.now();
+
 // 관심도 저장
 
 const interest = {
@@ -49,9 +53,13 @@ function renderFeed(data){
 
         <div class="feed-info">
 
-          <h3>${item.title}</h3>
+          <h3>
+            ${item.title}
+          </h3>
 
-          <p>${item.tag}</p>
+          <p>
+            ${item.tag}
+          </p>
 
           <div class="feed-meta">
 
@@ -60,7 +68,7 @@ function renderFeed(data){
             </span>
 
             <span>
-              4시간 전
+              3시간 전
             </span>
 
           </div>
@@ -75,7 +83,7 @@ function renderFeed(data){
 
 }
 
-// 클릭 이벤트
+// 카드 클릭 이벤트
 
 document.addEventListener(
 'click',
@@ -93,21 +101,21 @@ document.addEventListener(
 
   interest[type]++;
 
-  // 피드 재구성
+  // 피드 업데이트
 
   updateFeed();
+
+  // 관심도 바 업데이트
+
+  updateBars();
 
   // Bubble 생성
 
   createBubbleFeed(type);
 
-  // 진행바 업데이트
-
-  updateBars();
-
 });
 
-// 추천 피드 변화
+// 추천 피드 업데이트
 
 function updateFeed(){
 
@@ -121,9 +129,9 @@ function updateFeed(){
 
   const newFeed = [];
 
-  // 관심 분야 반복 증가
-
   feedData.forEach(item => {
+
+    // 가장 많이 선택한 콘텐츠 증가
 
     if(item.type === topInterest){
 
@@ -131,11 +139,9 @@ function updateFeed(){
       newFeed.push(item);
       newFeed.push(item);
 
-    }else{
-
-      newFeed.push(item);
-
     }
+
+    newFeed.push(item);
 
   });
 
@@ -180,10 +186,14 @@ function createBubbleFeed(type){
 
         <div class="feed-info">
 
-          <h3>${item.title}</h3>
+          <h3>
+            ${item.title}
+          </h3>
 
           <p>
+
             반복 추천되는 콘텐츠
+
           </p>
 
           <div class="feed-meta">
@@ -193,7 +203,9 @@ function createBubbleFeed(type){
             </span>
 
             <span>
+
               추천 정확도 상승
+
             </span>
 
           </div>
@@ -208,7 +220,7 @@ function createBubbleFeed(type){
 
 }
 
-// 진행바 업데이트
+// 관심도 바 업데이트
 
 function updateBars(){
 
@@ -247,14 +259,11 @@ function updateBars(){
 
 }
 
-// 초기화
+// 피드 초기화
 
-const resetBtn =
 document.getElementById(
   'resetBtn'
-);
-
-resetBtn.addEventListener(
+).addEventListener(
 'click',
 ()=>{
 
@@ -270,5 +279,50 @@ resetBtn.addEventListener(
   document.getElementById(
     'bubbleFeed'
   ).innerHTML = '';
+
+});
+
+// 분석 페이지 이동
+
+document.getElementById(
+  'analyzeBtn'
+).addEventListener(
+'click',
+()=>{
+
+  // 관심 데이터 저장
+
+  localStorage.setItem(
+
+    'interestData',
+
+    JSON.stringify(interest)
+
+  );
+
+  // 체류시간 계산
+
+  const currentTime =
+  Date.now();
+
+  const staySeconds =
+  Math.floor(
+    (currentTime - startTime) / 1000
+  );
+
+  // 체류시간 저장
+
+  localStorage.setItem(
+
+    'stayTime',
+
+    staySeconds
+
+  );
+
+  // 페이지 이동
+
+  window.location.href =
+  'analysis.html';
 
 });

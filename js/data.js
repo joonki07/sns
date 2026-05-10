@@ -10,6 +10,22 @@ const feedData = [
 
   {
     type:"game",
+    title:"🔥 T1 롤드컵 결승전 하이라이트",
+    tag:"#게임 #LOL",
+    likes:"8.4만",
+    color:"#6d28d9"
+  },
+
+  {
+    type:"game",
+    title:"🎮  네 이름은 '다이에나'야",
+    tag:"#게임 #프래그마타",
+    likes:"22.5만",
+    color:"#5d1dca"
+  },
+
+  {
+    type:"game",
     title:"🔥 신규 RPG 리뷰",
     tag:"#게임 #RPG",
     likes:"8.4만",

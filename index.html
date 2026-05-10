@@ -64,12 +64,35 @@
 
     </h2>
 
-    <!-- 카드 들어가는 영역 -->
-
     <div class="feed-container"
     id="feedContainer">
 
     </div>
+
+  </section>
+
+  <!-- ANALYZE SECTION -->
+
+  <section class="analyze-section">
+
+    <h2 class="analyze-title">
+
+      당신의 행동을 분석해볼까요?
+
+    </h2>
+
+    <p class="analyze-text">
+
+      클릭, 좋아요, 체류시간은<br>
+      추천 알고리즘이 학습하는 중요한 데이터입니다.
+
+    </p>
+
+    <button id="analyzeBtn">
+
+      🧠 나의 관심사 분석하기
+
+    </button>
 
   </section>
 
@@ -218,6 +241,113 @@
     </button>
 
   </section>
+
+  <!-- ANALYSIS MODAL -->
+
+  <div class="analysis-modal"
+  id="analysisModal">
+
+    <div class="analysis-content">
+
+      <button class="close-btn"
+      id="closeBtn">
+
+        ✕
+
+      </button>
+
+      <h2 class="modal-title">
+
+        당신의 피드 분석 결과
+
+      </h2>
+
+      <!-- 관심사 분석 -->
+
+      <div class="result-box">
+
+        <h3>
+          📊 관심사 분석
+        </h3>
+
+        <p id="topInterestText">
+          분석 중...
+        </p>
+
+      </div>
+
+      <!-- 체류시간 -->
+
+      <div class="result-box">
+
+        <h3>
+          ⏱ 체류시간 분석
+        </h3>
+
+        <p id="stayTimeText">
+          분석 중...
+        </p>
+
+      </div>
+
+      <!-- 알고리즘 원리 -->
+
+      <div class="result-box">
+
+        <h3>
+          ⚙️ 추천 알고리즘은 어떻게 작동할까?
+        </h3>
+
+        <p class="principle-text">
+
+          추천 알고리즘은 사용자의 행동 데이터를
+          기반으로 관심사를 예측합니다.<br><br>
+
+          어떤 콘텐츠를 오래 보았는지,
+          무엇을 반복 클릭했는지,
+          어떤 콘텐츠에 반응했는지를 분석해
+          비슷한 콘텐츠를 계속 추천합니다.<br><br>
+
+          즉, 당신의 행동은
+          다시 당신의 피드를 만드는 데이터가 됩니다.
+
+        </p>
+
+      </div>
+
+      <!-- 영향 -->
+
+      <div class="result-box">
+
+        <h3>
+          💭 알고리즘의 영향
+        </h3>
+
+        <p class="principle-text">
+
+          추천 시스템은 편리함을 제공하지만,
+          비슷한 콘텐츠를 반복 노출할 수도 있습니다.<br><br>
+
+          그 결과,
+          사용자는 다양한 관점보다
+          익숙한 정보만 계속 접하게 될 수 있습니다.
+
+        </p>
+
+      </div>
+
+      <!-- 마무리 -->
+
+      <div class="final-message">
+
+        당신의 선택은<br>
+        다시 당신의 세상을 만듭니다.
+
+      </div>
+
+    </div>
+
+  </div>
 
   <!-- JS -->
 
